@@ -27,7 +27,7 @@ export const profile = {
     "always shipping.",
   // Drop a square-ish image at /public/assets/profile.jpg (or change path).
   photo: "/assets/profile.jpg",
-  resumeUrl: "/resume.html", // the in-site résumé page (print → PDF)
+  resumeUrl: "/Nay_Lin_Htet_Resume_Backend_Systems.docx", // downloadable résumé (in /public)
   // "currently running" panel in the hero — your real, current status.
   // state: 'running' (now) | 'done' (past). Edit freely.
   now: [

@@ -95,11 +95,10 @@ export default function About() {
           {profile.resumeUrl && profile.resumeUrl !== "#" && (
             <a
               href={profile.resumeUrl}
-              target="_blank"
-              rel="noreferrer"
+              download
               className="inline-flex items-center gap-2 mt-6 mono text-xs text-fg border border-line-2 hover:border-accent hover:text-accent px-3 py-2 rounded transition-colors"
             >
-              <span className="text-accent">▸</span> open résumé
+              <span className="text-accent">↓</span> download résumé (.docx)
             </a>
           )}
         </div>
