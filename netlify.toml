@@ -1,0 +1,8 @@
+# Netlify build settings for the Vite portfolio.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 7 + Tailwind v4 need Node 20.19+ / 22. Pin to match local (.nvmrc).
+  NODE_VERSION = "22.14.0"
