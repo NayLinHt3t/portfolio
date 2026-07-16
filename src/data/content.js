@@ -144,7 +144,7 @@ export const projects = [
     summary:
       "A personal AI assistant focused on long-term memory — retaining context " +
       "across conversations and recalling it on demand, with clean prompt " +
-      "orchestration. (Refine this description to match what it actually does.)",
+      "orchestration.",
     highlights: ["persistent memory", "context recall"],
     repo: "https://github.com/NayLinHt3t/memoria",
     live: "#",
@@ -295,36 +295,38 @@ export const resume = {
   experience: [
     {
       title: "Backend Developer",
-      org: "University — Faculty of ___", // replace with dept / lab / team
+      org: "Mae Fah Luang University",
       location: "Chiang Rai, Thailand",
       start: "Jun 2026",
       end: "Present",
       stack: ["Node.js", "PostgreSQL", "Redis", "Docker"],
       bullets: [
-        "Build and maintain backend services and REST APIs (replace with a real accomplishment + impact).",
-        "Design database schemas and optimize queries for ___.",
+        "Designed and developed backend services for the Mae Fah Luang Hospital clinical summarization platform.",
+        "Worked directly with hospital staff to gather requirements and translate clinical workflows into software.",
+        "Built REST APIs with Node.js, PostgreSQL, Redis, and Docker, focusing on maintainability and performance.",
       ],
     },
     {
-      title: "React Developer (Junior)",
-      org: "Company name",
+      title: "Junior Frontend Developer",
+      org: "Remote",
       location: "",
-      start: "20XX",
-      end: "20XX",
-      stack: ["React", "TypeScript"],
+      start: "",
+      end: "",
+      stack: ["React", "Next.js"],
       bullets: [
-        "Built responsive UI components for ___ (replace with a real bullet + result).",
+        "Developed reusable React and Next.js components for an onboarding platform.",
+        "Collaborated with a distributed team and improved UI maintainability through reusable component design.",
       ],
     },
   ],
   education: [
     {
-      degree: "B.Sc. in Software Engineering",
-      school: "Your University",
+      degree: "Bachelor of Software Engineering",
+      school: "Mae Fah Luang University",
       location: "Chiang Rai, Thailand",
-      start: "20XX",
-      end: "20XX (expected)",
-      detail: "Relevant coursework: Operating Systems, Databases, Networks, Data Structures.",
+      start: "",
+      end: "",
+      detail: "Relevant coursework: Operating Systems, Computer Networks, Database Systems, Data Structures & Algorithms.",
     },
   ],
 };
