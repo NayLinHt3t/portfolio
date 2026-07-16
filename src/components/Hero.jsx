@@ -18,6 +18,13 @@ export default function Hero() {
             <p className="mono text-accent mt-2 text-sm md:text-base">
               {profile.role}
             </p>
+            {profile.specialties?.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {profile.specialties.map((s) => (
+                  <span key={s} className="tag">{s}</span>
+                ))}
+              </div>
+            )}
             <p className="text-fg-dim mt-4 max-w-xl leading-relaxed">
               {profile.tagline}
             </p>

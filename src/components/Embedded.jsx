@@ -67,11 +67,11 @@ function Card({ item }) {
 
 export default function Embedded() {
   return (
-    <Section id="embedded" index="// 03" title="embedded" path="/embedded · built for fun">
+    <Section id="embedded" index="// 03" title="embedded" path="/embedded · hardware & firmware">
       <div className="mono text-xs text-fg-mut mb-4">
-        <span className="text-accent">$</span> open ~/memories/*
+        <span className="text-accent">$</span> ls ~/embedded
         <span className="text-fg-mut">
-          {' '}— {embedded.length} things I soldered, wired, and (mostly) got working
+          {' '}— {embedded.length} low-level builds on real hardware
         </span>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

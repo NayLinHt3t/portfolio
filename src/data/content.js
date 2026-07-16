@@ -8,9 +8,11 @@
 export const profile = {
   name: "Nay Lin Htet",
   handle: "naylin",
-  role: "Software Engineer", // card says "System & Backend Engineer" if you want it bolder
+  role: "Software Engineer",
+  // dual-track signal shown as tags under the role
+  specialties: ["systems", "backend", "embedded"],
   tagline:
-    "Building scalable systems, solving complex problems, and optimizing for real-world impact.",
+    "I build backend services and low-level systems — from APIs and data pipelines down to C and bare metal.",
   location: "Chiang Rai, Thailand",
   timezone: "UTC+07",
   website: "naylinhtet.me",
@@ -18,12 +20,14 @@ export const profile = {
   // set to "" to hide the "open to work" banner
   availability: "open to work",
   summary:
-    "I design and build robust backend systems that are scalable, reliable, " +
-    "and efficient — focused on performance, concurrency, and clean " +
-    "architecture. Always learning, always shipping.",
+    "Software engineer working across the stack's depth — backend services and " +
+    "systems software alike. Comfortable from high-level APIs and data pipelines " +
+    "down to C, memory, concurrency, and hardware. Focused on performance, clean " +
+    "architecture, and understanding how things work underneath. Always learning, " +
+    "always shipping.",
   // Drop a square-ish image at /public/assets/profile.jpg (or change path).
   photo: "/assets/profile.jpg",
-  resumeUrl: "#", // link to your resume PDF, or leave '#'
+  resumeUrl: "/resume.html", // the in-site résumé page (print → PDF)
   // "currently running" panel in the hero — your real, current status.
   // state: 'running' (now) | 'done' (past). Edit freely.
   now: [
@@ -53,7 +57,7 @@ export const profile = {
 export const mapNodes = [
   { id: "about", label: "about", role: "identity service" },
   { id: "projects", label: "projects", role: "compute cluster" },
-  { id: "embedded", label: "embedded", role: "tinkering" },
+  { id: "embedded", label: "embedded", role: "embedded systems" },
   { id: "skills", label: "skills", role: "config store" },
   { id: "contact", label: "contact", role: "egress gateway" },
 ];
@@ -86,6 +90,13 @@ export const learning = [
   "Systems Programming",
   "Distributed Systems",
   "Advanced OS Concepts",
+];
+
+// "build queue" — systems projects you're planning next. Honest roadmap
+// shown under the projects grid (portfolio only, not the résumé).
+export const roadmap = [
+  { name: "Database server", note: "storage engine, query parsing, transactions" },
+  { name: "Container runtime", note: "namespaces + cgroups (mini-Docker)" },
 ];
 
 // status: 'running' | 'wip' | 'archived'
@@ -152,7 +163,36 @@ export const projects = [
       "handling, request parsing, and concurrent connections. A deliberate " +
       "deep dive into systems programming.",
     highlights: ["raw sockets", "request parsing", "concurrency"],
+    // RÉSUMÉ BULLETS — server is WIP, so these describe what's built so far.
+    // Set <...> to the model you actually used; add a benchmark bullet ONLY
+    // once you've measured it.
+    bullets: [
+      "Building an HTTP/1.1 server from scratch in C with zero external dependencies — raw BSD sockets and a hand-written request parser.",
+      "Implementing the connection layer with an epoll-based event loop and careful edge-case handling (partial reads, timeouts, SIGPIPE).",
+    ],
     repo: "https://github.com/NayLinHt3t/DeepDiveCAndSystem",
+    live: "#",
+  },
+  {
+    id: "shell",
+    name: "Shell (in C)",
+    tagline: "A Unix shell from scratch",
+    status: "wip",
+    progress: 50, // adjust to reality
+    period: "2026",
+    role: "Solo",
+    stack: ["C", "Linux", "syscalls"],
+    summary:
+      "A Unix shell written in C — tokenizing and parsing the command line, " +
+      "spawning processes with fork/exec, wiring up pipes and I/O redirection, " +
+      "plus built-ins and basic job control.",
+    highlights: ["fork/exec + pipes", "I/O redirection", "built-ins & job control"],
+    // RÉSUMÉ BULLETS — fill/trim to what's actually implemented.
+    bullets: [
+      "Built a Unix shell in C — command parsing, process creation via fork/exec, pipes, and I/O redirection using raw syscalls.",
+      "Implemented built-ins (cd, export, …), signal handling (SIGINT/SIGCHLD), and exit-status propagation across pipelines.",
+    ],
+    repo: "#", // add your GitHub link
     live: "#",
   },
   {
@@ -212,7 +252,7 @@ export const embedded = [
       "moveable vehicle",
     ],
     summary:
-      "I built a robotic arm with a microcontroller and a bluetooth module." +
+      "We built a robotic arm with a microcontroller and a bluetooth module." +
       "Control the arm's movements via a mobile app, allowing for precise manipulation of objects. The arm include a moveable vehicle to move around the environment.",
   },
   {
@@ -243,6 +283,51 @@ export const embedded = [
       "We built an RFID-based attendance system using a Raspberry Pi and RFID reader. The system displays attendance information on an LCD display, providing a simple and efficient way to track student attendance.",
   },
 ];
+
+// ------------------------------------------------------------------
+//  RESUME (/resume.html) — extra structured data a CV needs that the
+//  portfolio doesn't. Fill in the real bullets, employers, and dates.
+// ------------------------------------------------------------------
+export const resume = {
+  phone: "", // optional — leave "" to hide
+  // Feature these project ids (from `projects` above) on the resume.
+  featured: ["tripnest", "http-c", "shell"],
+  experience: [
+    {
+      title: "Backend Developer",
+      org: "University — Faculty of ___", // replace with dept / lab / team
+      location: "Chiang Rai, Thailand",
+      start: "Jun 2026",
+      end: "Present",
+      stack: ["Node.js", "PostgreSQL", "Redis", "Docker"],
+      bullets: [
+        "Build and maintain backend services and REST APIs (replace with a real accomplishment + impact).",
+        "Design database schemas and optimize queries for ___.",
+      ],
+    },
+    {
+      title: "React Developer (Junior)",
+      org: "Company name",
+      location: "",
+      start: "20XX",
+      end: "20XX",
+      stack: ["React", "TypeScript"],
+      bullets: [
+        "Built responsive UI components for ___ (replace with a real bullet + result).",
+      ],
+    },
+  ],
+  education: [
+    {
+      degree: "B.Sc. in Computer Science",
+      school: "Your University",
+      location: "Chiang Rai, Thailand",
+      start: "20XX",
+      end: "20XX (expected)",
+      detail: "Relevant coursework: Operating Systems, Databases, Networks, Data Structures.",
+    },
+  ],
+};
 
 // Shown as an "endpoint list" in the contact section.
 // NOTE: I guessed the github/linkedin handles and used your account email —

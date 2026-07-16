@@ -99,7 +99,7 @@ export default function About() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 mt-6 mono text-xs text-fg border border-line-2 hover:border-accent hover:text-accent px-3 py-2 rounded transition-colors"
             >
-              <span className="text-accent">↓</span> download resume.pdf
+              <span className="text-accent">▸</span> open résumé
             </a>
           )}
         </div>

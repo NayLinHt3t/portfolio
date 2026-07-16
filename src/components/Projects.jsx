@@ -1,4 +1,4 @@
-import { projects } from '../data/content.js'
+import { projects, roadmap } from '../data/content.js'
 import Section from './Section.jsx'
 
 const STATUS = {
@@ -114,6 +114,26 @@ export default function Projects() {
           <ProjectCard key={p.id} p={p} />
         ))}
       </div>
+
+      {roadmap?.length > 0 && (
+        <div className="panel mt-4 p-4 md:p-5">
+          <div className="mono text-xs text-fg-mut mb-3">
+            <span className="text-accent">$</span> cat ~/.build-queue
+            <span className="text-fg-mut"> — planned systems builds</span>
+          </div>
+          <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+            {roadmap.map((r) => (
+              <li key={r.name} className="flex items-baseline gap-2 min-w-0">
+                <span className="mono text-[10px] text-fg-mut uppercase tracking-wide shrink-0">
+                  ◻ queued
+                </span>
+                <span className="text-sm text-fg-dim shrink-0">{r.name}</span>
+                <span className="mono text-[11px] text-fg-mut truncate">// {r.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </Section>
   )
 }
