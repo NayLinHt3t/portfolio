@@ -40,7 +40,7 @@ export const profile = {
     {
       state: "running",
       label: "Undergraduate Student",
-      detail: "Computer Science", // change to your major
+      detail: "Software Engineering",
       since: "",
     },
     {
@@ -319,7 +319,7 @@ export const resume = {
   ],
   education: [
     {
-      degree: "B.Sc. in Computer Science",
+      degree: "B.Sc. in Software Engineering",
       school: "Your University",
       location: "Chiang Rai, Thailand",
       start: "20XX",
